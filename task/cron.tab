@@ -1,0 +1,5 @@
+0 */1 * * * http://localhost:8080/whale/work
+*/5 * * * * http://localhost:8080/whale/check
+0 4,8 * * * http://localhost:8080/poems/work
+*/15 * * * * http://localhost:8080/poems/check
+*/2 * * * * http://localhost:8080/kindle/work

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Kindle 分享至饭否（非官方）</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="/static/m.css" type="text/css" media="screen" charset="utf-8" /></head>
+<body>
+<h1><a href="/kindle"><img src="/static/fanfou.gif" alt="饭否" /></a></h1>
+$if web.ctx.session.get('notice'):
+    <p class="n">$notice()</p>
+<p>
+【Kindle 饭】是一款非官方 Kindle 内容分享应用。在阅读过程中，选中文本发送至我们指定的邮箱，即可轻松分享至饭否。<br /></br />
+
+温馨提示：<br />
+1. 分享邮件的主题及内容请保持默认，否则无法判别；<br />
+2. 超过 140 字的消息会采用形如 [1/2] [2/2] 的格式进行分条发送，消息延时一分钟左右；<br />
+3. 仅从亚马逊官方 Kindle 商店下载的电子书才具备分享功能；<br />
+4. 本应用目前仅支持中英文内容的分享。<br /><br />
+
+为顺利使用该应用，您需要：<br />
+1. 将 Kindle 固件升级至最新版本（<a href="https://www.amazon.cn/gp/help/customer/display.html/ref=hp_bc_nav?ie=UTF8&nodeId=200529680" target="_blank">>=5.7.2.1</a>）；<br />
+2. 授权本应用（<a href="http://share.fanfou.club/" target="_blank">http://share.fanfou.club/</a>）；<br />
+3. 填写 Kindle 关联的亚马逊注册邮箱（非亚马逊分配的用于发送个人文档的邮箱）。<br /><br />
+
+*本服务的<a href="http://help.fanfou.com/agreement.html" target="_blank">使用协议</a>和<a href="http://help.fanfou.com/privacy.html" target="_blank">隐私声明</a>与饭否保持一致，请自觉遵守。自使用本服务起即表示您已经同意本说明。使用过程中有任何疑问，请@或私信 <a href="http://fanfou.com/home2" target="_blank">home2</a>，谢谢。
+</p>
+<hr />
+<p class="n">*邮箱地址授权后可见</p>
+<div id="ft">&copy; 2016 fanfou.club/kindle</div>
+<p>[$now()]</p>
+</body>
+</html>

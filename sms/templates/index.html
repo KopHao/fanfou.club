@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title> 短信发饭（非官方）</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="/static/m.css" type="text/css" media="screen" charset="utf-8" /></head>
+<body>
+<h1><a href="/sms"><img src="/static/fanfou.gif" alt="饭否" /></a></h1>
+$if web.ctx.session.get('notice'):
+    <p class="n">$notice()</p>
+$if  not web.ctx.session.get('sms_token') or not get_mobile():
+    <p>授权本应用后，绑定手机号码，即可通过短信更新饭否。</p>
+$if  not web.ctx.session.get('sms_token'):
+    <p class="n"><a href="/sms/authorize">跳转至饭否授权本应用</a>（对手机号码比较敏感的饭友请谨慎使用）</p><hr />
+$else:
+    <form method="post" action="/sms" >
+    <p>手机号码：<input name="mobile" type="text" value="$get_mobile()"/><input type="submit" value="保存" /></p>
+    </form>
+    <p class="n">请发短信到 170 9722 1512 更新饭否</p>
+    <hr />
+    $if get_mobile():
+        *<a href="/sms/suicide">删除绑定</a> | 
+<a href="/sms/help" target="_blank">应用简介及帮助</a>
+<div id="ft">&copy; 2014 fanfou.club/sms</div>
+<p>[$now()]</p>
+</body>
+</html>

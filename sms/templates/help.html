@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title> 短信发饭（小鲸鱼）</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="/static/m.css" type="text/css" media="screen" charset="utf-8" /></head>
+<body>
+<h1><a href="/sms"><img src="/static/fanfou.gif" alt="饭否" /></a></h1>
+$if web.ctx.session.get('notice'):
+    <p class="n">$notice()</p>
+<p>
+【短信发饭】是一款非官方通过短信更新饭否的应用。适用于深夜怀旧或者流量告急的时候。<br /></br />
+
+温馨提示：<br />
+1. 您可把服务号码存为男（女）票，闲来没事可以多聊天；<br />
+2. 超过 140 字的消息会采用形如 [1/2] [2/2] 的格式进行分条发送（实现中），消息延时十五秒左右。<br /><br />
+
+*本服务的<a href="http://help.fanfou.com/agreement.html" target="_blank">使用协议</a>和<a href="http://help.fanfou.com/privacy.html" target="_blank">隐私声明</a>与饭否保持一致，请自觉遵守。自使用本服务起即表示您已经同意本说明。使用过程中有任何疑问，请@或私信 <a href="http://fanfou.com/home2" target="_blank">home2</a>，谢谢。
+</p>
+<hr />
+<p class="n">*服务号码授权后可见</p>
+<div id="ft">&copy; 2014 fanfou.club/sms</div>
+<p>[$now()]</p>
+</body>
+</html>

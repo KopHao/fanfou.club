@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Kindle 分享至饭否（非官方）</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="/static/m.css" type="text/css" media="screen" charset="utf-8" /></head>
+<body>
+<h1><a href="/kindle"><img src="/static/fanfou.gif" alt="饭否" /></a></h1>
+$if web.ctx.session.get('notice'):
+    <p class="n">$notice()</p>
+$if  not web.ctx.session.get('kindle_token') or not get_email():
+    <p>授权本应用后，绑定邮箱地址，即可在 Kindle 分享文字至饭否。</p>
+$if  not web.ctx.session.get('kindle_token'):
+    <p class="n"><a href="/kindle/authorize">跳转至饭否授权本应用</a>（对邮箱地址比较敏感的饭友请谨慎使用）</p><hr />
+$else:
+    <form method="post" action="/kindle" >
+    <p>您的邮箱地址：<input name="email" type="text" value="$get_email()"/><input type="submit" value="保存" /></p>
+    </form>
+    <p class="n">请发送邮件到 kindle@fanfou.club 轻松分享</p>
+    <hr />
+    $if get_email():
+        *<a href="/kindle/suicide">删除绑定</a> | 
+<a href="/kindle/help" target="_blank">应用简介及帮助</a>
+<div id="ft">&copy; 2016 fanfou.club/kindle</div>
+<p>[$now()]</p>
+</body>
+</html>
